@@ -18,7 +18,7 @@ After selecting one of the drawn figures (they are described by the serial numbe
 The figure is selected as when deleting. After selecting one of the drawn figures, the user switches to the special movement mode. To move the figure, you must specify the direction: up - /u, left - /l, right - /r, down - /d and the shift in the format: <command> <shift> (integer number).
 To exit the special mode, enter /q)
 5)To change the fill of a figure, you must first select the figure (The selection is the same as when deleting), then specify the fill symbol of the figure through /, for example </#>.
-6) Save combination of figures in file - this function saves all figures in file storage.txt.
+6) Save combination of figures in file - this function saves all figures in file, the path specified by the user.
 7) Load from file - this function load data from file. If file is empty, workspace will clear.
 8) Undo action - this function deletes last action. If there aren't any actions program will give empty workspace,User can only use 5 uses of this function
 in a row!!.
