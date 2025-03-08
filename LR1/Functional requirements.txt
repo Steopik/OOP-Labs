@@ -1,0 +1,37 @@
+1) The application must provide the following functionality: drawing figures with customizable parameters, erasing drawn figures, moving a figure, change a background of figure, saving a canvas to a file, loading a canvas from a file, undoing actions, and repeating actions.
+2) The figure drawing functionality provides the ability to draw 5 types of figures in the console: ellipse (derived class - circle), rectangle (derived class - square), regular triangle. To select a figure, you must enter one of the commands:
+/e - ellipse
+/c - circle
+/r - rectangle
+/s - square
+/rt - regular triangle
+After selecting a figure, special parameters will be requested:
+Ellipse - two radii
+Circle - radius
+Rectangle - length and width
+Square - length
+Regular triangle - length
+After setting the basic parameters, you will be asked to give the figure a name (optional).
+3) Delete a drawn figure - this function is ONLY available if there are figures on the board.
+After selecting one of the drawn figures (they are described by the serial number of creation, type and name), to select a figure, enter the number or name of the figure from the list provided.
+4) Move the drawn figure - this option is ONLY available if there are figures in the console.
+The figure is selected as when deleting. After selecting one of the drawn figures, the user switches to the special movement mode. To move the figure, you must specify the direction: up - /u, left - /l, right - /r, down - /d and the shift in the format: <command> <shift> (integer number).
+To exit the special mode, enter /q)
+5)To change the fill of a figure, you must first select the figure (The selection is the same as when deleting), then specify the fill symbol of the figure through /, for example </#>.
+6) Save combination of figures in file - this function saves all figures in file storage.txt.
+7) Load from file - this function load data from file. If file is empty, workspace will clear.
+8) Undo action - this function deletes last action. If there aren't any actions program will give empty workspace,User can only use 5 uses of this function
+in a row!!.
+8) Redo action - this function retrieves last deleted function if it were any deleted. Only five uses in a row.If there aren't any actions program will give empty workspace.
+
+
+
+
+
+
+
+
+
+
+
+
