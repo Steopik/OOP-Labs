@@ -341,7 +341,17 @@ namespace ConsolePaint
 
 		public List<IFigure> GetFigures()
 		{
-			return Figures;
+			List<IFigure> newList = new List<IFigure>();
+            foreach (IFigure figure in Figures)
+            {
+				if (figure is Circle) newList.Add(new Circle(figure as Circle));
+				else if (figure is Ellipse) newList.Add(new Ellipse(figure as Ellipse));
+                else if (figure is Square) newList.Add(new Square(figure as Square));
+                else if (figure is Rectangle) newList.Add(new Rectangle(figure as Rectangle));
+                else if (figure is RightTriangle) newList.Add(new RightTriangle(figure as RightTriangle));
+                else continue;
+            }
+            return newList;
 		}
 
 
