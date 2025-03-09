@@ -11,5 +11,16 @@ namespace ConsolePaint.Figures
 		public Circle(int radius = 1, char color = '#', char backgroundColor = ' ')
 			: base(radius, radius, color, backgroundColor)
 		{}
+
+		public Circle(Circle circle)
+		{
+			this.Name = circle.Name;
+			this.CenterX = circle.CenterX;
+			this.CenterY = circle.CenterY;
+			this.FirstRadius = circle.FirstRadius;
+			this.SecondRadius = circle.SecondRadius;
+			this.Color = circle.Color;
+			this.BackgroundColor = circle.BackgroundColor;
+		}
 	}
 }

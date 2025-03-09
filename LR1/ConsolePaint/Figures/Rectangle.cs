@@ -15,6 +15,17 @@ namespace ConsolePaint.Figures
             Length = length;
             Width = width;
         }
+
+        public Rectangle(Rectangle rectangle)
+        {
+            this.Name = rectangle.Name;
+            this.CenterX = rectangle.CenterX;
+            this.CenterY = rectangle.CenterY;
+            this.Width = rectangle.Width;
+            this.Length = rectangle.Length;
+            this.Color = rectangle.Color;
+            this.BackgroundColor = rectangle.BackgroundColor;
+        }
         public char Color { get; set; }
         public char BackgroundColor { get; set; }
         public int CenterX { get; set; }

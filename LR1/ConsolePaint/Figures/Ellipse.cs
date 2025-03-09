@@ -15,6 +15,17 @@ namespace ConsolePaint.Figures
             FirstRadius = firstRadius;
             SecondRadius = secondRadius;
         }
+
+        public Ellipse(Ellipse ellipse)
+        {
+            this.Name = ellipse.Name;
+            this.CenterX = ellipse.CenterX;
+            this.CenterY = ellipse.CenterY;
+            this.FirstRadius = ellipse.FirstRadius;
+            this.SecondRadius = ellipse.SecondRadius;
+            this.Color = ellipse.Color;
+            this.BackgroundColor = ellipse.BackgroundColor;
+        }
         public char BackgroundColor { get; set; }
         public char Color { get; set; }
         public int CenterX { get; set; }
