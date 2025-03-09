@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ConsolePaint.Figures
 {
-	class RightTriangle : IFigure
+    class RightTriangle : IFigure
 	{
         public RightTriangle(int length = 1, char color = '#', char backgroundColor = ' ')
 		{
