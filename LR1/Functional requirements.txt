@@ -13,7 +13,7 @@ Square - length
 Regular triangle - length
 After setting the basic parameters, you will be asked to give the figure a name (optional).
 3) Delete a drawn figure - this function is ONLY available if there are figures on the board.
-After selecting one of the drawn figures (they are described by the serial number of creation, type and name), to select a figure, enter the number or name of the figure from the list provided.
+After selecting one of the drawn figures (they are described by the serial number of creation, type and name), to select a figure, enter the number of the figure from the list provided.
 4) Move the drawn figure - this option is ONLY available if there are figures in the console.
 The figure is selected as when deleting. After selecting one of the drawn figures, the user switches to the special movement mode. To move the figure, you must specify the direction: up - /u, left - /l, right - /r, down - /d and the shift in the format: <command> <shift> (integer number).
 To exit the special mode, enter /q)
