@@ -17,21 +17,21 @@ namespace ConsolePaint.Tools
             Storage = storage;
         }
 
-        List<IFigure> Back()
+        public List<IFigure> Back()
         {
-            if (Rollback > 3) throw new Exception("It is impossible to roll back more than 5 steps");
+            if (Rollback > 3 || Rollback > Storage.Count - 2) throw new Exception("It is impossible to roll back more than 5 steps");
             Rollback += 1;
             return Storage[Storage.Count - (Rollback + 1)];
         }
 
-        List<IFigure> Forward()
+        public List<IFigure> Forward()
         {
             if (Rollback < 1) throw new Exception("It is impossible to restore more than 5 dates");
             Rollback -= 1;
             return Storage[Storage.Count - (Rollback + 1)]; 
         }
 
-        void Add(List<IFigure> figures)
+        public void Add(List<IFigure> figures)
         {
             while (Storage.Count > StorageMaxSize)
             {
@@ -44,11 +44,19 @@ namespace ConsolePaint.Tools
                 Rollback -= 1;
             }
 
-            for (int i = 0; i < StorageMaxSize - 1; i++)
+            if (Storage.Count == 5)
             {
-                Storage[i] = Storage[i + 1];
+                for (int i = 0; i < StorageMaxSize - 1; i++)
+                {
+                    Storage[i] = Storage[i + 1];
+                }
+                Storage[Storage.Count - 1] = figures;
             }
-            Storage[Storage.Count - 1] = figures;
+            else
+            {
+                Storage.Add(figures);
+            }
+            
         }
     }
 }
