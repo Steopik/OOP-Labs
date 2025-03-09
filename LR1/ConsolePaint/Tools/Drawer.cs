@@ -35,7 +35,7 @@ namespace ConsolePaint
 
 			if (DrawEllipse(ellipse))
 			{
-				Figures.Append(ellipse);
+				Figures.Add(ellipse);
 				return true;
 			}
 			return false;
@@ -54,7 +54,7 @@ namespace ConsolePaint
 
 			if (DrawEllipse(circle))
 			{
-				Figures.Append(circle);
+				Figures.Add(circle);
 				return true;
 			}
 			return false;
@@ -85,7 +85,7 @@ namespace ConsolePaint
 					Console.SetCursorPosition(x2, y2);
 					Console.Write(ellipse.Color);
 
-					if (x != x2)
+					if (x != x2 && ellipse.BackgroundColor != ' ')
 					{
 						DrawLine(x + 1, y1, x2 - 1, y1, ellipse.BackgroundColor);
 						DrawLine(x + 1, y2, x2 - 1, y2, ellipse.BackgroundColor);
@@ -115,7 +115,7 @@ namespace ConsolePaint
 
 			if (DrawRectangle(rectangle))
 			{
-				Figures.Append(rectangle);
+				Figures.Add(rectangle);
 				return true;
 			}
 			return false;
@@ -134,7 +134,7 @@ namespace ConsolePaint
 
 			if (DrawRectangle(square))
 			{
-				Figures.Append(square);
+				Figures.Add(square);
 				return true;
 			}
 			return false;
@@ -153,10 +153,13 @@ namespace ConsolePaint
 				DrawLine(x1, y2, x2, y2, rectangle.Color);
 				DrawLine(x1, y1, x1, y2, rectangle.Color);
 				DrawLine(x2, y1, x2, y2, rectangle.Color);
-
-				for (int y = y1 + 1; y <= y2 - 1; y++)
+				if (rectangle.BackgroundColor != ' ')
 				{
-					DrawLine(x1 + 1, y, x2 - 1, y, rectangle.BackgroundColor);
+
+					for (int y = y1 + 1; y <= y2 - 1; y++)
+					{
+						DrawLine(x1 + 1, y, x2 - 1, y, rectangle.BackgroundColor);
+					}
 				}
 				
 				return true;
@@ -181,7 +184,8 @@ namespace ConsolePaint
 
 			if (DrawTriangle(triangle))
 			{
-				Figures.Append(triangle);
+				Figures.Add(triangle);
+				return true;
 			}
 			return false;
 		}
@@ -199,27 +203,30 @@ namespace ConsolePaint
 			DrawLine(x1, y1, x3, y2_3, rightTriangle.Color);
 			DrawLine(x2, y2_3, x3, y2_3, rightTriangle.Color);
 
-
-            int offsetXl = x2 - x1;
-            int offsetYl = y2_3 - y1;
-            double kl = offsetXl / (double)offsetYl;
-            double bl = x1 - y1 * kl;
-
-            int offsetXr = x3 - x1;
-            int offsetYr = y2_3 - y1;
-            double kr = offsetXr / (double)offsetYr;
-            double br = x1 - y1 * kr;
-
-            for (int y = y1 + 1; y <= y2_3 -1 ; y++)
+			if (rightTriangle.BackgroundColor != ' ')
 			{
-                int xl = (int)Math.Round(kl * y + bl);
-                int xr = (int)Math.Round(kr * y + br);
-				for (int x = xl + 1; x <= xr - 1; x++)
+
+				int offsetXl = x2 - x1;
+				int offsetYl = y2_3 - y1;
+				double kl = offsetXl / (double)offsetYl;
+				double bl = x1 - y1 * kl;
+
+				int offsetXr = x3 - x1;
+				int offsetYr = y2_3 - y1;
+				double kr = offsetXr / (double)offsetYr;
+				double br = x1 - y1 * kr;
+
+				for (int y = y1 + 1; y <= y2_3 - 1; y++)
 				{
-                    Console.SetCursorPosition(x, y);
-                    Console.Write(rightTriangle.BackgroundColor);
-                }
-            }
+					int xl = (int)Math.Round(kl * y + bl);
+					int xr = (int)Math.Round(kr * y + br);
+					for (int x = xl + 1; x <= xr - 1; x++)
+					{
+						Console.SetCursorPosition(x, y);
+						Console.Write(rightTriangle.BackgroundColor);
+					}
+				}
+			}
 
 			return true;
 		}
@@ -280,7 +287,7 @@ namespace ConsolePaint
 		{
 			try
 			{
-				Figures.Remove(Figures[index]);
+				Figures.RemoveAt(index);
 				ReDraw();
 				return true;
 			}
