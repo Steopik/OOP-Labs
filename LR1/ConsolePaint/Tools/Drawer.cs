@@ -64,34 +64,34 @@ namespace ConsolePaint
 		{
 			try
 			{
-				Console.SetCursorPosition(ellipse.CenterX - ellipse.FirstRadius, ellipse.CenterY);
-				for (int x = Console.CursorLeft; x <= ellipse.CenterX; x++)
+				Console.SetCursorPosition(ellipse.CenterX, ellipse.CenterY - ellipse.SecondRadius);
+				for (int y = Console.CursorTop; y <= ellipse.CenterY; y++)
 				{
-					int offsetX = ellipse.CenterX - x;
-					int offsetY = (int)Math.Sqrt((1 - Math.Pow(offsetX, 2) / Math.Pow(ellipse.FirstRadius, 2)) * Math.Pow(ellipse.SecondRadius, 2));
+					int offsetY = ellipse.CenterY - y;
+					int offsetX = (int)Math.Sqrt((1 - Math.Pow(offsetY, 2) / Math.Pow(ellipse.SecondRadius, 2)) * Math.Pow(ellipse.FirstRadius, 2));
+					int x1 = ellipse.CenterX - offsetX;
 					int x2 = ellipse.CenterX + offsetX;
-					int y1 = ellipse.CenterY - offsetY;
-					int y2 = ellipse.CenterY + offsetY;
+                    int y2 = ellipse.CenterY + offsetY;
 
-					Console.SetCursorPosition(x, y1);
-					Console.Write(ellipse.Color);
+                    Console.SetCursorPosition(x1, y);
+                    Console.Write(ellipse.Color);
 
-					Console.SetCursorPosition(x, y2);
-					Console.Write(ellipse.Color);
+                    Console.SetCursorPosition(x1, y2);
+                    Console.Write(ellipse.Color);
 
-					Console.SetCursorPosition(x2, y1);
-					Console.Write(ellipse.Color);
+                    Console.SetCursorPosition(x2, y);
+                    Console.Write(ellipse.Color);
 
-					Console.SetCursorPosition(x2, y2);
-					Console.Write(ellipse.Color);
+                    Console.SetCursorPosition(x2, y2);
+                    Console.Write(ellipse.Color);
 
-					if (x != x2 && ellipse.BackgroundColor != ' ')
-					{
-						DrawLine(x + 1, y1, x2 - 1, y1, ellipse.BackgroundColor);
-						DrawLine(x + 1, y2, x2 - 1, y2, ellipse.BackgroundColor);
-					}
-					
-				}
+                    if (x1 != ellipse.CenterX && ellipse.BackgroundColor != ' ')
+                    {
+                        DrawLine(x1 + 1, y, x2 - 1, y, ellipse.BackgroundColor);
+                        DrawLine(x1 + 1, y2, x2 - 1, y2, ellipse.BackgroundColor);
+                    }
+                }
+
 				return true;
 			}
 			catch (Exception  e)
@@ -232,40 +232,36 @@ namespace ConsolePaint
 		}
 		bool DrawLine(int x1, int y1, int x2, int y2, char color)
 		{
-			
-			if (x1 == x2)
+			if (y1 == y2)
 			{
-				if (y2 < y1) (y1, y2) = (y2, y1);
-				for (int y = y1; y <= y2; y++)
+				if (x2 < x1) (x1, x2) = (x2, x1);
+				for (int x = x1; x <= x2; x++)
 				{
-					Console.SetCursorPosition(x1, y);
+					Console.SetCursorPosition(x, y1);
 					Console.Write(color);
 				}
 				return true;
 			}
-			if (x2 < x1) (x1, x2, y1, y2) = (x2, x1, y2, y1);
 
-			
-			int offsetX = x2 - x1;
-			int offsetY = y2 - y1;
-			double k = offsetY / (double)offsetX;
-			double b = y1 - x1 * k;
+            if (y2 < y1) (x1, x2, y1, y2) = (x2, x1, y2, y1);
+            int offsetX = x2 - x1;
+            int offsetY = y2 - y1;
+            double k = offsetX / (double)offsetY;
+            double b = x1 - y1 * k;
 
-
-			for (int x = x1; x <= x2; x++)
+			for (int y = y1; y <= y2; y++)
 			{
-				int y = (int)Math.Round(k * x + b);
-				Console.SetCursorPosition(x, y);
-				Console.Write(color);
-			}
+				int x = (int)Math.Round(k * y + b);
+                Console.SetCursorPosition(x, y);
+                Console.Write(color);
+            }
 			return true;
-			
 		}
 		public bool ReDraw()
 		{
 			try
 			{
-				Clear(height - 2);
+				Clear(2, height);
 				foreach (IFigure figure in Figures)
 				{
 					if (figure is Circle) DrawEllipse(figure as Circle);
@@ -329,11 +325,11 @@ namespace ConsolePaint
 
         }
 
-        public void Clear(int k)
+        public void Clear(int start, int end)
         {
-            for (int i = 0; i < k; ++i)
+            for (int i = start; i < end; ++i)
             {
-                Console.SetCursorPosition(0, 2 + i);
+                Console.SetCursorPosition(0, i);
                 Console.Write("\r");
                 Console.Write(new string(' ', Console.WindowWidth));
             }
