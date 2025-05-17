@@ -2,7 +2,7 @@
 
 namespace ConsolePaint.Tools
 {
-    class ChangeAction
+    public class ChangeAction
     {
         int StorageMaxSize = 5;
         int Rollback = 0;

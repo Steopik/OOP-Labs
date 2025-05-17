@@ -2,7 +2,7 @@
 
 namespace ConsolePaint.Figures
 {
-    interface IFigure
+    public interface IFigure
     {
         char Color { get; set; }
         char BackgroundColor { get; set; }

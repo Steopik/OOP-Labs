@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "JAD3ohwDHok=",
+  "success": true,
+  "projectFilePath": "E:\\repos\\OOP-Labs\\LR1\\ConsolePaint\\ConsolePaint.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Степан\\.nuget\\packages\\microsoft.testplatform\\17.13.0\\microsoft.testplatform.17.13.0.nupkg.sha512",
+    "C:\\Users\\Степан\\.nuget\\packages\\xunit\\2.9.3\\xunit.2.9.3.nupkg.sha512",
+    "C:\\Users\\Степан\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\Степан\\.nuget\\packages\\xunit.analyzers\\1.20.0\\xunit.analyzers.1.20.0.nupkg.sha512",
+    "C:\\Users\\Степан\\.nuget\\packages\\xunit.assert\\2.9.3\\xunit.assert.2.9.3.nupkg.sha512",
+    "C:\\Users\\Степан\\.nuget\\packages\\xunit.core\\2.9.3\\xunit.core.2.9.3.nupkg.sha512",
+    "C:\\Users\\Степан\\.nuget\\packages\\xunit.extensibility.core\\2.9.3\\xunit.extensibility.core.2.9.3.nupkg.sha512",
+    "C:\\Users\\Степан\\.nuget\\packages\\xunit.extensibility.execution\\2.9.3\\xunit.extensibility.execution.2.9.3.nupkg.sha512",
+    "C:\\Users\\Степан\\.nuget\\packages\\xunit.runner.console\\2.9.3\\xunit.runner.console.2.9.3.nupkg.sha512",
+    "C:\\Users\\Степан\\.nuget\\packages\\xunit.runner.visualstudio\\3.0.2\\xunit.runner.visualstudio.3.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

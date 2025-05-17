@@ -1,0 +1,18 @@
+{
+Type: Circle
+Radius: 5
+Name: c1
+Color: %
+BackgroundColor:  
+CenterX: 106
+CenterY: 25
+}
+{
+Type: RightTriangle
+Length: 14
+Name: rt1
+Color: ^
+BackgroundColor: ^
+CenterX: 106
+CenterY: 18
+}

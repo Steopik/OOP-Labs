@@ -3,7 +3,7 @@
 
 namespace ConsolePaint.Tools
 {
-	class FileWorker
+	public class FileWorker
 	{
 		
 

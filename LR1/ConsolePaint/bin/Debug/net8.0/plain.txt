@@ -1,0 +1,28 @@
+{
+Type: RightTriangle
+Length: 16
+Name: 123
+Color: #
+BackgroundColor:  
+CenterX: 106
+CenterY: 25
+}
+{
+Type: Rectangle
+Width: 18
+Length: 3
+Name: 3
+Color: |
+BackgroundColor:  
+CenterX: 106
+CenterY: 25
+}
+{
+Type: Circle
+Radius: 5
+Name: e
+Color: |
+BackgroundColor:  
+CenterX: 106
+CenterY: 25
+}

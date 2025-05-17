@@ -1,8 +1,6 @@
 ﻿using ConsolePaint;
 using ConsolePaint.Figures;
 using ConsolePaint.Tools;
-using System;
-using System.Runtime.Serialization.Formatters;
 
 public class Program
 {

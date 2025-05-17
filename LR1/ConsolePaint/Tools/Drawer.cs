@@ -3,7 +3,7 @@
 
 namespace ConsolePaint
 {
-	class Drawer
+	public class Drawer
 	{
 		List<IFigure> Figures;
 		int width;

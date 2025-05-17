@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConsolePaint.Figures
 {
-    class RightTriangle : IFigure
+    public class RightTriangle : IFigure
 	{
         public RightTriangle(int length = 1, char color = '#', char backgroundColor = ' ')
 		{
